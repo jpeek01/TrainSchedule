@@ -1,0 +1,38 @@
+.border {
+    border: 1px solid darkslategray;
+}
+
+body {
+    background-color: #A6ACAF;
+}
+
+.bodyStyle {
+    background-color: #D0D3D4;
+}
+
+.header {
+    margin-right: 0px;
+}
+
+.headStyle {
+    margin-top: 10px;
+    font-family: Bitter, 'Times New Roman', serif;
+    background-color: darkslategray;
+    color: whitesmoke
+}
+
+.trainSchedule {
+    font-family: Cabin, Arial, 'sans serif';
+}
+
+.formText {
+    font-family: Cabin, Arial, serif;
+    padding: 5px;
+}
+
+.formFields {
+    max-width: 90%;
+    margin-bottom: 10px;
+}
+
+
