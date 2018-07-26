@@ -26,21 +26,16 @@
 
         $("#submit").on("click", function(event) {
             event.preventDefault();
-
-            var times = getTimes(train.firstTrain, train.frequency);
    
             train.name = $("#trainName").val().trim();
             train.destination = $("#destination").val().trim();
             train.frequency = $("#frequency").val().trim();
             train.firstTrain = $("#firstTrain").val().trim();
+
+            var times = getTimes(train.firstTrain, train.frequency);
+
             train.nextArrivalTime = times[0];
-            train.minutesAway = "5";
-
-            console.log(train.nextArrivalTime);
-            console.log(train.minutesAway);
-
-            // console.log(train.name);console.log(train.destination);console.log(train.frequency);
-            // console.log(train.firstTrain);
+            train.minutesAway = times[1];
 
             database.ref().push({
                 name: train.name,
@@ -49,7 +44,6 @@
                 firstTrain: train.firstTrain,
                 nextArrivalTime: train.nextArrivalTime,
                 minutesAway: train.minutesAway,
-                // createDate: firebase.database.ServerValue.TIMESTAMP
             });
         });
 
@@ -70,9 +64,6 @@
     });
 
     function getTimes(firstTrain, frequency) {
-        firstTrain = new Date(firstTrain); //moment is deprecating support for strings so converting to a date
-        frequency = parseInt(frequency);
-
         var times = []; //create an array to hold the times
 
         //stuff
