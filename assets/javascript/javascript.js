@@ -45,6 +45,11 @@
                 nextArrivalTime: train.nextArrivalTime,
                 minutesAway: train.minutesAway,
             });
+
+            $("#trainName").val("");
+            $("#destination").val("");
+            $("#frequency").val("");
+            $("#firstTrain").val("");
         });
 
         database.ref().on("child_added", function(snapshot) {  
